@@ -1,31 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+	<div id="app" :class="{ sidebar_visible: sidebar_open }">
+		<Sidebar :user="current_user" @menu_clicked="toggle_sidebar" />
+		<div @click="toggle_sidebar" class="ss-overlay"></div>
+    <div class="ss-content">
+			<Header @menu_clicked="toggle_sidebar" />
+			<router-view />
+		</div>
+	</div>
 </template>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+import Sidebar from "@/components/Sidebar.vue";
+import Header from "@/components/Header.vue";
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+	name: "app",
+	components: {
+		Sidebar,
+		Header
+  },
+  data() {
+    return {
+      sidebar_open: false,
+      current_user: {
+        name: "Alicia Keys",
+        points: 348,
+        member_since: "5/3/19",
+        level: 2,
+        avatar: "/imgs/user_avatar.png"
+      }
+    }
+  },
+  methods: {
+    toggle_sidebar: function(){
+      this.sidebar_open = !this.sidebar_open
+    }
+  }
+};
+</script>

@@ -38,6 +38,10 @@
       "parser": "babel-eslint"
     }
   },
+  "prettier": {
+    "useTabs": true,
+    "tabWidth": 4
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
