@@ -84,3 +84,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, label {
     background-position: center;
     background-repeat: no-repeat;
 }
+.ss-sidebar__menu-item {
+    padding: 15px 10px;
+    display: block;
+    color: white;
+    text-align: left;
+    margin: 0;
+}
+.ss-sidebar__menu-item--active {
+    background: #000000;
+}
