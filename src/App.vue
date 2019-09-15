@@ -10,6 +10,7 @@
 </template>
 
 <!-- TODO: Make api call in mounted -->
+<!-- Testing branch capabilities -->
 <script>
 import Sidebar from "@/components/Sidebar.vue";
 import Header from "@/components/Header.vue";
