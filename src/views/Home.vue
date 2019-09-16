@@ -21,9 +21,15 @@
 <script>
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
+import { globals } from "../globals.js";
 
 export default {
 	name: "home",
+	data() {
+		return {
+			user: globals.current_user
+		};
+	},
 	mounted() {
 		var swiper_obj = {
 			pagination: {

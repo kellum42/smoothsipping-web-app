@@ -37,9 +37,13 @@
 </template>
 
 <script>
+import { globals } from "../globals.js";
+
 export default {
-	props: {
-		user: Object
+	data() {
+		return {
+			user: globals.current_user
+		};
 	},
 	methods: {
 		menu_button_clicked: function() {
